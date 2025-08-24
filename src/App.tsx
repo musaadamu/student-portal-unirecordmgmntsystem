@@ -112,6 +112,9 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-            </Routes>
-          </ErrorBoundary>
-        );
+      </Routes>
+    </ErrorBoundary>
+  );
+}
+
+export default App;
