@@ -49,69 +49,65 @@ function App() {
     <ErrorBoundary>
       <Routes>
         {/* Public Routes */}
-        return (
-          <ErrorBoundary>
-            <Routes>
-              {/* Public Routes */}
-              <Route
-                path="/login"
-                element={
-                  isAuthenticated && token ? (
-                    <Navigate to="/dashboard" replace />
-                  ) : (
-                    <AuthLayout>
-                      <LoginPage />
-                    </AuthLayout>
-                  )
-                }
-              />
-              <Route
-                path="/forgot-password"
-                element={
-                  isAuthenticated && token ? (
-                    <Navigate to="/dashboard" replace />
-                  ) : (
-                    <AuthLayout>
-                      <ForgotPasswordPage />
-                    </AuthLayout>
-                  )
-                }
-              />
-              <Route
-                path="/reset-password"
-                element={
-                  isAuthenticated && token ? (
-                    <Navigate to="/dashboard" replace />
-                  ) : (
-                    <AuthLayout>
-                      <ResetPasswordPage />
-                    </AuthLayout>
-                  )
-                }
-              />
+        <Route
+          path="/login"
+          element={
+            isAuthenticated && token ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <AuthLayout>
+                <LoginPage />
+              </AuthLayout>
+            )
+          }
+        />
+        <Route
+          path="/forgot-password"
+          element={
+            isAuthenticated && token ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <AuthLayout>
+                <ForgotPasswordPage />
+              </AuthLayout>
+            )
+          }
+        />
+        <Route
+          path="/reset-password"
+          element={
+            isAuthenticated && token ? (
+              <Navigate to="/dashboard" replace />
+            ) : (
+              <AuthLayout>
+                <ResetPasswordPage />
+              </AuthLayout>
+            )
+          }
+        />
 
-              {/* Protected Routes */}
-              <Route
-                path="/*"
-                element={
-                  <ProtectedRoute>
-                    <Layout>
-                      <Routes>
-                        <Route path="/" element={<Navigate to="/dashboard" replace />} />
-                        <Route path="/dashboard" element={<DashboardPage />} />
-                        <Route path="/courses" element={<CoursesPage />} />
-                        <Route path="/grades" element={<GradesPage />} />
-                        <Route path="/payments" element={<PaymentsPage />} />
-                        <Route path="/schedule" element={<SchedulePage />} />
-                        <Route path="/profile" element={<ProfilePage />} />
-                        <Route path="/notifications" element={<NotificationsPage />} />
-                        {/* Catch all route */}
-                        <Route path="*" element={<Navigate to="/dashboard" replace />} />
-                      </Routes>
-                    </Layout>
-                  </ProtectedRoute>
-                }
-              />
+        {/* Protected Routes */}
+        <Route
+          path="/*"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Routes>
+                  <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                  <Route path="/dashboard" element={<DashboardPage />} />
+                  <Route path="/courses" element={<CoursesPage />} />
+                  <Route path="/grades" element={<GradesPage />} />
+                  <Route path="/payments" element={<PaymentsPage />} />
+                  <Route path="/schedule" element={<SchedulePage />} />
+                  <Route path="/profile" element={<ProfilePage />} />
+                  <Route path="/notifications" element={<NotificationsPage />} />
+                  {/* Catch all route */}
+                  <Route path="*" element={<Navigate to="/dashboard" replace />} />
+                </Routes>
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </ErrorBoundary>
   );
