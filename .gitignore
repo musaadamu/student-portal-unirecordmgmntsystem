@@ -91,7 +91,8 @@ out
 .nuxt
 
 # Gatsby files
-.cache/
+# .cache/
+# public
 public
 
 # Storybook build outputs
