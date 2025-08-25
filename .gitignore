@@ -216,3 +216,4 @@ uploads/
 
 # JWT secrets and other sensitive files
 secrets/
+.vercel
