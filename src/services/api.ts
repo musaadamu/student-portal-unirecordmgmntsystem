@@ -4,7 +4,7 @@ import { useAuthStore } from '@/stores/authStore';
 
 // Create axios instance
 export const apiClient: AxiosInstance = axios.create({
-  baseURL: 'https://backend-unirecordmgmntsystem.onrender.com/api', // Updated to deployed backend URL
+  baseURL: process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000/api', // Updated to use environment variable
   timeout: 30000,
   headers: {
     'Content-Type': 'application/json',
